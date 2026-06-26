@@ -8,7 +8,6 @@ const services = [
     id: 'terrace',
     icon: '🏠',
     title: 'Terrace & Roof Waterproofing',
-    price: '₹45 – ₹90 / sq.ft',
     description: 'Terrace leakages are one of the most common and costly problems for building owners. Our terrace waterproofing system creates a robust, seamless barrier that prevents water ingress for years.',
     steps: [
       'Surface preparation — cleaning, crack repair, and leveling',
@@ -23,7 +22,6 @@ const services = [
     id: 'bathroom',
     icon: '🚿',
     title: 'Bathroom & Wet Area Waterproofing',
-    price: '₹35 – ₹65 / sq.ft',
     description: 'Moisture in bathrooms can silently damage structural slabs, walls, and flooring over time. Our wet area waterproofing ensures every vulnerable surface is sealed before tiling.',
     steps: [
       'Detailed inspection of joints, corners, and drain points',
@@ -38,7 +36,6 @@ const services = [
     id: 'wall',
     icon: '🧱',
     title: 'Wall & Facade Waterproofing',
-    price: '₹20 – ₹45 / sq.ft',
     description: 'Exterior walls face constant exposure to rain, wind, and humidity. Damp walls lead to efflorescence, mold, and paint peeling. Our facade treatments stop water at the surface.',
     steps: [
       'Assessment of wall cracks, joints, and surface condition',
@@ -53,7 +50,6 @@ const services = [
     id: 'tank',
     icon: '💧',
     title: 'Water Tank & Sump Waterproofing',
-    price: '₹40 – ₹70 / sq.ft',
     description: 'Leaking water tanks waste thousands of litres and damage surrounding structures. We use non-toxic, potable-water-safe systems for overhead tanks, underground sumps, and cisterns.',
     steps: [
       'Tank draining and surface cleaning',
@@ -68,7 +64,6 @@ const services = [
     id: 'basement',
     icon: '🏗️',
     title: 'Basement Waterproofing',
-    price: '₹55 – ₹100 / sq.ft',
     description: 'Basements face constant hydrostatic pressure from groundwater. Our negative-side and positive-side waterproofing systems keep basements permanently dry in all conditions.',
     steps: [
       'Hydrostatic pressure assessment and drainage mapping',
@@ -83,7 +78,6 @@ const services = [
     id: 'balcony',
     icon: '🪟',
     title: 'Balcony & Podium Waterproofing',
-    price: '₹40 – ₹75 / sq.ft',
     description: 'Balconies are exposed to direct rain and thermal movement, making them prone to cracking and seepage. Our flexible membrane systems accommodate movement without cracking.',
     steps: [
       'Surface inspection and cleaning',
@@ -115,18 +109,11 @@ const services = [
   <!-- Services detail -->
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto space-y-16">
-      {services.map(({ id, icon, title, price, description, steps, materials }) => (
+      {services.map(({ id, icon, title, description, steps, materials }) => (
         <div id={id} class="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden scroll-mt-24">
-          <div class="bg-gray-50 border-b border-gray-200 px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <span class="text-4xl">{icon}</span>
-              <h2 class="text-2xl font-extrabold text-primary">{title}</h2>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="bg-accent/10 border border-accent/30 text-accent font-bold px-4 py-1.5 rounded-full text-sm">
-                {price}
-              </div>
-            </div>
+          <div class="bg-gray-50 border-b border-gray-200 px-8 py-5 flex items-center gap-3">
+            <span class="text-4xl">{icon}</span>
+            <h2 class="text-2xl font-extrabold text-primary">{title}</h2>
           </div>
 
           <div class="p-8 grid md:grid-cols-2 gap-8">
