@@ -8,5 +8,5 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'static',
   site: 'https://traviteja.github.io',
-  base: isProd ? '/mythriwaterproofing_app' : '/',
+  base: isProd ? '/mythriwaterproofing_website' : '/',
 });
