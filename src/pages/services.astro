@@ -18,7 +18,6 @@ const services = [
       'Drainage slope correction where needed',
     ],
     materials: 'Dr. Fixit, Fosroc, Sika — crystalline or polymer-modified bitumen membranes',
-    warranty: '5 years',
   },
   {
     id: 'bathroom',
@@ -34,7 +33,6 @@ const services = [
       'Flood test to verify integrity before tile work begins',
     ],
     materials: 'Flexible cementitious waterproofing compounds, acrylic-based membranes, polyurethane sealants',
-    warranty: '5 years',
   },
   {
     id: 'wall',
@@ -50,7 +48,6 @@ const services = [
       'Weather-resistant top coat for long-term protection',
     ],
     materials: 'Silicone-based water repellents, acrylic elastomeric coatings, crystalline waterproofing agents',
-    warranty: '3–5 years',
   },
   {
     id: 'tank',
@@ -66,7 +63,6 @@ const services = [
       'Final inspection and handover',
     ],
     materials: 'Potable water-safe crystalline coatings — Dr. Fixit Dampguard, Fosroc Brushbond',
-    warranty: '5 years',
   },
   {
     id: 'basement',
@@ -82,7 +78,6 @@ const services = [
       'Final inspection with moisture meter readings',
     ],
     materials: 'CICO crystalline compounds, Fosroc Nitoseal, Sika injection resins',
-    warranty: '5 years',
   },
   {
     id: 'balcony',
@@ -98,17 +93,16 @@ const services = [
       'Final check and tiling can proceed after curing',
     ],
     materials: 'Flexible polyurethane membranes, Sika MultiSeal, Dr. Fixit Flexicoat',
-    warranty: '5 years',
   },
 ];
 ---
 
-<BaseLayout title="Services" description="Mythri Waterproofing services in Hyderabad — terrace, bathroom, wall, water tank, basement, and balcony waterproofing with 5-year warranty.">
+<BaseLayout title="Services" description="Mythri Waterproofing services in Hyderabad — terrace, bathroom, wall, water tank, basement, and balcony waterproofing.">
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4 text-center">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Our Services</h1>
-    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-6">Comprehensive waterproofing for every part of your building — with transparent pricing and a 5-year warranty.</p>
+    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-6">Comprehensive waterproofing for every part of your building.</p>
     <div class="flex flex-wrap gap-3 justify-center">
       {services.map(({ id, icon, title }) => (
         <a href={`#${id}`} class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full transition-colors border border-white/20">
@@ -121,7 +115,7 @@ const services = [
   <!-- Services detail -->
   <section class="py-16 px-4">
     <div class="max-w-5xl mx-auto space-y-16">
-      {services.map(({ id, icon, title, price, description, steps, materials, warranty }) => (
+      {services.map(({ id, icon, title, price, description, steps, materials }) => (
         <div id={id} class="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden scroll-mt-24">
           <div class="bg-gray-50 border-b border-gray-200 px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center gap-3">
@@ -131,9 +125,6 @@ const services = [
             <div class="flex items-center gap-3">
               <div class="bg-accent/10 border border-accent/30 text-accent font-bold px-4 py-1.5 rounded-full text-sm">
                 {price}
-              </div>
-              <div class="bg-primary/10 border border-primary/20 text-primary font-semibold px-3 py-1.5 rounded-full text-xs">
-                🛡️ {warranty} warranty
               </div>
             </div>
           </div>
