@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const projects = [
+  {
+    id: 1,
+    category: 'terrace',
+    label: 'Terrace Waterproofing',
+    location: 'Gachibowli',
+    img: 'https://images.pexels.com/photos/5264807/pexels-photo-5264807.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 2,
+    category: 'bathroom',
+    label: 'Bathroom Waterproofing',
+    location: 'Madhapur',
+    img: 'https://images.pexels.com/photos/7167064/pexels-photo-7167064.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 3,
+    category: 'wall',
+    label: 'Wall & Facade Coating',
+    location: 'Kondapur',
+    img: 'https://images.pexels.com/photos/5691597/pexels-photo-5691597.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 4,
+    category: 'terrace',
+    label: 'Roof Panel Waterproofing',
+    location: 'Kukatpally',
+    img: 'https://images.pexels.com/photos/5264825/pexels-photo-5264825.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 5,
+    category: 'terrace',
+    label: 'Terrace Waterproofing',
+    location: 'Miyapur',
+    img: 'https://images.pexels.com/photos/5391969/pexels-photo-5391969.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 6,
+    category: 'bathroom',
+    label: 'Bathroom Renovation & Seal',
+    location: 'Jubilee Hills',
+    img: 'https://images.pexels.com/photos/3616774/pexels-photo-3616774.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 7,
+    category: 'wall',
+    label: 'Brick Wall Renovation',
+    location: 'Secunderabad',
+    img: 'https://images.pexels.com/photos/15798785/pexels-photo-15798785.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+  {
+    id: 8,
+    category: 'terrace',
+    label: 'Roof Waterproofing',
+    location: 'Banjara Hills',
+    img: 'https://images.pexels.com/photos/8853521/pexels-photo-8853521.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop',
+  },
+];
+
+const filters = [
+  { key: 'all', label: 'All Projects' },
+  { key: 'terrace', label: 'Terrace & Roof' },
+  { key: 'bathroom', label: 'Bathroom' },
+  { key: 'wall', label: 'Wall & Facade' },
+];
+---
+
+<BaseLayout title="Gallery" description="See Mythri Waterproofing's completed projects — terrace, bathroom, and wall waterproofing across Hyderabad.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Project Gallery</h1>
+    <p class="text-blue-100 text-lg max-w-2xl mx-auto">Browse our completed waterproofing projects across Hyderabad.</p>
+  </section>
+
+  <!-- Filter + Grid -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Filter tabs -->
+      <div class="flex flex-wrap gap-3 justify-center mb-10" id="filters">
+        {filters.map(({ key, label }) => (
+          <button
+            data-filter={key}
+            class={`px-5 py-2 rounded-full font-semibold border-2 transition-colors filter-btn ${key === 'all' ? 'bg-primary text-white border-primary' : 'bg-white text-primary border-primary hover:bg-primary hover:text-white'}`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5" id="gallery-grid">
+        {projects.map(({ id, category, label, location, img }) => (
+          <div data-category={category} class="gallery-item group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="aspect-square overflow-hidden bg-gray-100">
+              <img
+                src={img}
+                alt={`${label} in ${location}, Hyderabad`}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4 bg-white">
+              <div class="font-bold text-primary text-sm">{label}</div>
+              <div class="text-gray-400 text-xs flex items-center gap-1 mt-1">
+                <span>📍</span>{location}, Hyderabad
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-accent py-16 px-4 text-white text-center">
+    <h2 class="text-3xl font-extrabold mb-3">Want Results Like These?</h2>
+    <p class="text-orange-100 text-lg mb-8">Contact us for a free site visit and quote.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+919876543210" class="flex items-center justify-center gap-2 bg-white text-accent hover:bg-orange-50 font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        📞 Call Now
+      </a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        💬 WhatsApp
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      btns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-white');
+        b.classList.add('bg-white', 'text-primary');
+      });
+      btn.classList.add('bg-primary', 'text-white');
+      btn.classList.remove('bg-white');
+
+      items.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        (item as HTMLElement).style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
+      });
+    });
+  });
+</script>

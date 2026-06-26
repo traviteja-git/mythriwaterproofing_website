@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const services = [
+  {
+    title: 'Terrace & Roof Waterproofing',
+    description: 'Advanced membrane systems that stop roof leakages for good. Covers flat roofs, sloped surfaces, and parapet walls.',
+    icon: '🏠',
+    href: `${base}services#terrace`,
+  },
+  {
+    title: 'Bathroom & Wet Area',
+    description: 'Seamless waterproofing for bathrooms, kitchens, and balconies before and after tiling. Flood-tested before handover.',
+    icon: '🚿',
+    href: `${base}services#bathroom`,
+  },
+  {
+    title: 'Wall & Facade',
+    description: 'Weather-resistant coatings that stop dampness, seepage, and paint peeling on exterior and interior walls.',
+    icon: '🧱',
+    href: `${base}services#wall`,
+  },
+  {
+    title: 'Water Tank & Sump',
+    description: 'Non-toxic, potable-water-safe waterproofing for overhead tanks, underground sumps, and water storage structures.',
+    icon: '💧',
+    href: `${base}services#tank`,
+  },
+  {
+    title: 'Basement Waterproofing',
+    description: 'Crystalline and membrane systems to keep basements permanently dry, even under hydrostatic pressure.',
+    icon: '🏗️',
+    href: `${base}services#basement`,
+  },
+  {
+    title: 'Balcony & Podium',
+    description: 'Flexible waterproofing membranes for balconies, terraces, and podium slabs that can withstand thermal movement.',
+    icon: '🪟',
+    href: `${base}services#balcony`,
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Ramesh Reddy',
+    location: 'Gachibowli, Hyderabad',
+    rating: 5,
+    text: 'Had terrace leakage for 3 years — two other contractors failed to fix it. Mythri resolved it in 2 days. Excellent work and very professional team.',
+  },
+  {
+    name: 'Sunitha Lakshmi',
+    location: 'Kondapur, Hyderabad',
+    rating: 5,
+    text: 'Bathroom leaking into the hall below. They did a thorough inspection and waterproofed the entire wet area. No issues at all since then. Highly recommended!',
+  },
+  {
+    name: 'Venkat Rao',
+    location: 'Kukatpally, Hyderabad',
+    rating: 5,
+    text: 'Used Dr. Fixit products and their workmanship is top-class. The team was punctual, clean, and explained every step. Worth every rupee.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'How long does waterproofing last?',
+    a: 'Our terrace and roof waterproofing typically lasts 8–15 years depending on the system used. We back all our work with a 5-year warranty. Bathroom waterproofing lasts 10+ years when properly applied.',
+  },
+  {
+    q: 'How much does waterproofing cost in Hyderabad?',
+    a: 'Terrace waterproofing starts from ₹45–₹90 per sq. ft. depending on the area and system. Bathroom waterproofing starts from ₹35 per sq. ft. We provide a free site inspection and detailed quote before any commitment.',
+  },
+  {
+    q: 'Will I need to break tiles for bathroom waterproofing?',
+    a: 'In most cases, yes — proper waterproofing must be done before tiling for lasting results. However, we also offer injection grouting and crack-sealing techniques for cases where breaking tiles is not an option.',
+  },
+  {
+    q: 'What brands/materials do you use?',
+    a: 'We use premium products from Dr. Fixit (Pidilite), Fosroc, Sika, and Asian Paints SmartCare — all leading brands trusted across India. We never compromise on material quality.',
+  },
+  {
+    q: 'Do you offer a warranty?',
+    a: 'Yes — all our waterproofing work comes with a 5-year workmanship warranty. If any leakage occurs due to our work within the warranty period, we will rectify it at no extra cost.',
+  },
+  {
+    q: 'How long does the work take?',
+    a: 'A standard bathroom takes 2–3 days. Terrace waterproofing for 1,000 sq. ft. typically takes 3–5 days including curing time. We always give you a timeline before starting.',
+  },
+];
+
+const brands = ['Dr. Fixit', 'Fosroc', 'Sika', 'Asian Paints SmartCare', 'CICO'];
+---
+
+<BaseLayout title="Home" description="Mythri Waterproofing — Professional waterproofing solutions for terrace, bathroom, walls and water tanks in Hyderabad. Free site inspection. 5-year warranty.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 text-blue-100 text-sm px-3 py-1 rounded-full mb-4">
+          ⭐ Rated #1 Waterproofing Service in Hyderabad
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          Stop Leaks <span class="text-accent">Once & For All</span>
+        </h1>
+        <p class="text-blue-100 text-lg mb-6 leading-relaxed">
+          Professional waterproofing for terraces, bathrooms, walls & water tanks. 500+ happy clients across Hyderabad. Free site inspection.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:+919876543210" class="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl text-lg transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            Call for Free Quote
+          </a>
+          <a href={`${base}services`} class="flex items-center justify-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 font-bold px-7 py-3.5 rounded-xl text-lg transition-colors">
+            View Services
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        {[
+          { stat: '500+', label: 'Projects Done' },
+          { stat: '20+', label: 'Years Experience' },
+          { stat: '5yr', label: 'Warranty' },
+          { stat: '100%', label: 'Satisfaction' },
+        ].map(({ stat, label }) => (
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center border border-white/10">
+            <div class="text-3xl font-extrabold text-accent">{stat}</div>
+            <div class="text-blue-100 text-sm mt-1">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted brands -->
+  <section class="bg-gray-50 border-y border-gray-200 py-5 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-center text-gray-400 text-xs uppercase tracking-widest mb-4">We use products from trusted brands</p>
+      <div class="flex flex-wrap justify-center gap-6 items-center">
+        {brands.map((brand) => (
+          <div class="bg-white border border-gray-200 rounded-lg px-5 py-2 text-primary font-bold text-sm shadow-sm">
+            {brand}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">Our Services</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">Comprehensive waterproofing solutions for every part of your home or building.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((s) => <ServiceCard {...s} />)}
+      </div>
+      <div class="text-center mt-10">
+        <a href={`${base}services`} class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 py-3 rounded-xl transition-colors">
+          See All Service Details →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="bg-primary text-white py-20 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Why Hyderabad Trusts Mythri</h2>
+        <p class="text-blue-100 mb-6 leading-relaxed">We diagnose the root cause first — then apply the right solution. No shortcuts, no repeat visits.</p>
+        <ul class="space-y-4">
+          {[
+            ['🔍', 'Free site inspection & detailed quotation'],
+            ['🏆', 'Premium Dr. Fixit, Fosroc & Sika materials only'],
+            ['👷', 'Trained, uniformed, background-verified technicians'],
+            ['📋', 'Transparent pricing — no hidden charges'],
+            ['🛡️', '5-year warranty on all waterproofing work'],
+            ['⏱️', 'On-time delivery with minimal disruption'],
+          ].map(([icon, point]) => (
+            <li class="flex items-start gap-3">
+              <span class="text-xl">{icon}</span>
+              <span class="text-blue-100">{point}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="tel:+919876543210" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl transition-colors">
+            📞 Call Now
+          </a>
+          <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="text-accent font-bold mb-4 uppercase text-sm tracking-wide">Pricing Guide</div>
+        <div class="space-y-4">
+          {[
+            ['Terrace Waterproofing', '₹45 – ₹90 / sq.ft'],
+            ['Bathroom Waterproofing', '₹35 – ₹65 / sq.ft'],
+            ['Wall / Facade', '₹20 – ₹45 / sq.ft'],
+            ['Water Tank / Sump', '₹40 – ₹70 / sq.ft'],
+          ].map(([service, price]) => (
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+              <span class="text-blue-100 text-sm">{service}</span>
+              <span class="text-white font-bold text-sm">{price}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-blue-300 text-xs mt-4">* Final pricing depends on area, condition, and system chosen. Free inspection before any commitment.</p>
+        <a href={`${base}contact`} class="mt-5 block text-center bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-xl transition-colors">
+          Get Exact Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery preview -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">Our Recent Work</h2>
+        <p class="text-gray-500 text-lg">Real projects across Hyderabad. Real results.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { img: 'https://images.pexels.com/photos/5264807/pexels-photo-5264807.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Terrace — Gachibowli' },
+          { img: 'https://images.pexels.com/photos/7167064/pexels-photo-7167064.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Bathroom — Madhapur' },
+          { img: 'https://images.pexels.com/photos/5691597/pexels-photo-5691597.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Wall — Kondapur' },
+          { img: 'https://images.pexels.com/photos/5391969/pexels-photo-5391969.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Rooftop — Kukatpally' },
+        ].map(({ img, label }) => (
+          <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+            <img src={img} alt={label} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-3 py-2">
+              <span class="text-white text-xs font-medium">{label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href={`${base}gallery`} class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded-xl transition-colors">
+          View Full Gallery →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">What Our Clients Say</h2>
+        <p class="text-gray-500 text-lg">500+ satisfied customers across Hyderabad</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map(({ name, location, rating, text }) => (
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col gap-4">
+            <div class="flex gap-1">
+              {Array.from({ length: rating }).map(() => (
+                <span class="text-yellow-400 text-lg">★</span>
+              ))}
+            </div>
+            <p class="text-gray-600 leading-relaxed flex-1">"{text}"</p>
+            <div>
+              <div class="font-bold text-primary">{name}</div>
+              <div class="text-gray-400 text-sm flex items-center gap-1">
+                <span>📍</span>{location}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">Frequently Asked Questions</h2>
+        <p class="text-gray-500">Everything you need to know before hiring a waterproofing contractor.</p>
+      </div>
+      <div class="space-y-3" id="faq-list">
+        {faqs.map(({ q, a }, i) => (
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden faq-item">
+            <button
+              class="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-primary hover:bg-gray-50 transition-colors faq-trigger"
+              data-index={i}
+            >
+              <span>{q}</span>
+              <svg class="w-5 h-5 shrink-0 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              {a}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-accent py-16 px-4 text-white text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Ready to Fix Your Leakage?</h2>
+    <p class="text-orange-100 text-lg mb-8 max-w-xl mx-auto">Free site inspection. Detailed quote. No obligations. Call or WhatsApp us now.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+919876543210" class="flex items-center justify-center gap-2 bg-white text-accent hover:bg-orange-50 font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        📞 +91 98765 43210
+      </a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        💬 WhatsApp Us
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = !answer?.classList.contains('hidden');
+
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+      if (!isOpen) {
+        answer?.classList.remove('hidden');
+        icon?.classList.add('rotate-180');
+      }
+    });
+  });
+</script>

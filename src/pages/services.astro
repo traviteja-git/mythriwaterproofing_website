@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const services = [
+  {
+    id: 'terrace',
+    icon: '🏠',
+    title: 'Terrace & Roof Waterproofing',
+    price: '₹45 – ₹90 / sq.ft',
+    description: 'Terrace leakages are one of the most common and costly problems for building owners. Our terrace waterproofing system creates a robust, seamless barrier that prevents water ingress for years.',
+    steps: [
+      'Surface preparation — cleaning, crack repair, and leveling',
+      'Primer application for better adhesion',
+      'Waterproofing membrane or coating application (2–3 coats)',
+      'UV-protective top coat for long-term durability',
+      'Drainage slope correction where needed',
+    ],
+    materials: 'Dr. Fixit, Fosroc, Sika — crystalline or polymer-modified bitumen membranes',
+    warranty: '5 years',
+  },
+  {
+    id: 'bathroom',
+    icon: '🚿',
+    title: 'Bathroom & Wet Area Waterproofing',
+    price: '₹35 – ₹65 / sq.ft',
+    description: 'Moisture in bathrooms can silently damage structural slabs, walls, and flooring over time. Our wet area waterproofing ensures every vulnerable surface is sealed before tiling.',
+    steps: [
+      'Detailed inspection of joints, corners, and drain points',
+      'Application of flexible waterproofing slurry',
+      'Reinforcement tape at all critical joints and corners',
+      'Multi-coat system for floor and walls (up to 300mm height)',
+      'Flood test to verify integrity before tile work begins',
+    ],
+    materials: 'Flexible cementitious waterproofing compounds, acrylic-based membranes, polyurethane sealants',
+    warranty: '5 years',
+  },
+  {
+    id: 'wall',
+    icon: '🧱',
+    title: 'Wall & Facade Waterproofing',
+    price: '₹20 – ₹45 / sq.ft',
+    description: 'Exterior walls face constant exposure to rain, wind, and humidity. Damp walls lead to efflorescence, mold, and paint peeling. Our facade treatments stop water at the surface.',
+    steps: [
+      'Assessment of wall cracks, joints, and surface condition',
+      'Crack filling with flexible sealants and repair mortar',
+      'Application of penetrating water repellent or silicone-based coating',
+      'Sealing around windows, doors, and all penetrations',
+      'Weather-resistant top coat for long-term protection',
+    ],
+    materials: 'Silicone-based water repellents, acrylic elastomeric coatings, crystalline waterproofing agents',
+    warranty: '3–5 years',
+  },
+  {
+    id: 'tank',
+    icon: '💧',
+    title: 'Water Tank & Sump Waterproofing',
+    price: '₹40 – ₹70 / sq.ft',
+    description: 'Leaking water tanks waste thousands of litres and damage surrounding structures. We use non-toxic, potable-water-safe systems for overhead tanks, underground sumps, and cisterns.',
+    steps: [
+      'Tank draining and surface cleaning',
+      'Crack repair with hydraulic cement',
+      'Application of non-toxic crystalline waterproofing coat (2 coats)',
+      'Curing and water retention test before use',
+      'Final inspection and handover',
+    ],
+    materials: 'Potable water-safe crystalline coatings — Dr. Fixit Dampguard, Fosroc Brushbond',
+    warranty: '5 years',
+  },
+  {
+    id: 'basement',
+    icon: '🏗️',
+    title: 'Basement Waterproofing',
+    price: '₹55 – ₹100 / sq.ft',
+    description: 'Basements face constant hydrostatic pressure from groundwater. Our negative-side and positive-side waterproofing systems keep basements permanently dry in all conditions.',
+    steps: [
+      'Hydrostatic pressure assessment and drainage mapping',
+      'Surface preparation and crack injection grouting',
+      'Application of crystalline or polyurethane membrane system',
+      'Drainage board installation where required',
+      'Final inspection with moisture meter readings',
+    ],
+    materials: 'CICO crystalline compounds, Fosroc Nitoseal, Sika injection resins',
+    warranty: '5 years',
+  },
+  {
+    id: 'balcony',
+    icon: '🪟',
+    title: 'Balcony & Podium Waterproofing',
+    price: '₹40 – ₹75 / sq.ft',
+    description: 'Balconies are exposed to direct rain and thermal movement, making them prone to cracking and seepage. Our flexible membrane systems accommodate movement without cracking.',
+    steps: [
+      'Surface inspection and cleaning',
+      'Primer application',
+      'Flexible polyurethane or acrylic membrane application',
+      'Protection screed over membrane',
+      'Final check and tiling can proceed after curing',
+    ],
+    materials: 'Flexible polyurethane membranes, Sika MultiSeal, Dr. Fixit Flexicoat',
+    warranty: '5 years',
+  },
+];
+---
+
+<BaseLayout title="Services" description="Mythri Waterproofing services in Hyderabad — terrace, bathroom, wall, water tank, basement, and balcony waterproofing with 5-year warranty.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Our Services</h1>
+    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-6">Comprehensive waterproofing for every part of your building — with transparent pricing and a 5-year warranty.</p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      {services.map(({ id, icon, title }) => (
+        <a href={`#${id}`} class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full transition-colors border border-white/20">
+          {icon} {title.split(' ')[0]}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Services detail -->
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto space-y-16">
+      {services.map(({ id, icon, title, price, description, steps, materials, warranty }) => (
+        <div id={id} class="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden scroll-mt-24">
+          <div class="bg-gray-50 border-b border-gray-200 px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl">{icon}</span>
+              <h2 class="text-2xl font-extrabold text-primary">{title}</h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-accent/10 border border-accent/30 text-accent font-bold px-4 py-1.5 rounded-full text-sm">
+                {price}
+              </div>
+              <div class="bg-primary/10 border border-primary/20 text-primary font-semibold px-3 py-1.5 rounded-full text-xs">
+                🛡️ {warranty} warranty
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-gray-600 leading-relaxed mb-6">{description}</p>
+              <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <div class="text-xs font-bold text-gray-400 uppercase mb-2">Materials Used</div>
+                <div class="text-gray-600 text-sm">{materials}</div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-primary mb-3">Our Process</div>
+              <ol class="space-y-3">
+                {steps.map((step, idx) => (
+                  <li class="flex items-start gap-3">
+                    <span class="w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">{idx + 1}</span>
+                    <span class="text-gray-600 text-sm leading-relaxed">{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <a href={`${base}contact`} class="mt-6 inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-xl transition-colors text-sm">
+                Get a Quote for This Service →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-16 px-4 text-white text-center">
+    <h2 class="text-3xl font-extrabold mb-3">Not Sure Which Service You Need?</h2>
+    <p class="text-blue-100 text-lg mb-8">Call us — our experts will inspect your property for free and recommend the right solution.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+919876543210" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        📞 Call Now — Free Inspection
+      </a>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+        💬 WhatsApp Us
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
