@@ -1,426 +1,222 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 const base = import.meta.env.BASE_URL;
 
 const services = [
   {
-    index: '01',
     title: 'Terrace & Roof',
-    description: 'Advanced membrane systems that stop roof leakages for good — flat roofs, sloped surfaces, and parapet walls.',
+    desc: 'Membrane systems that stop roof leakages permanently — flat roofs, sloped surfaces, parapet walls.',
     href: `${base}services#terrace`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    img: 'https://images.pexels.com/photos/5264807/pexels-photo-5264807.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   },
   {
-    index: '02',
     title: 'Bathroom & Wet Area',
-    description: 'Seamless waterproofing for bathrooms, kitchens, and balconies before tiling. Flood-tested before handover.',
+    desc: 'Seamless waterproofing before and after tiling. Flood-tested before handover.',
     href: `${base}services#bathroom`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v3H5a2 2 0 0 0-2 2v5a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-5a2 2 0 0 0-2-2h-2V7a5 5 0 0 0-5-5z"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg>`,
+    img: 'https://images.pexels.com/photos/7167064/pexels-photo-7167064.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2M4 12l2 8h12l2-8"/></svg>`,
   },
   {
-    index: '03',
     title: 'Wall & Facade',
-    description: 'Weather-resistant coatings that stop dampness, seepage, and paint peeling on exterior and interior walls.',
+    desc: 'Weather-resistant coatings that stop dampness, seepage, and paint peeling.',
     href: `${base}services#wall`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
+    img: 'https://images.pexels.com/photos/5691597/pexels-photo-5691597.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
   },
   {
-    index: '04',
     title: 'Water Tank & Sump',
-    description: 'Non-toxic, potable-water-safe waterproofing for overhead tanks, underground sumps, and cisterns.',
+    desc: 'Non-toxic, potable-water-safe coating for overhead tanks and underground sumps.',
     href: `${base}services#tank`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>`,
+    img: 'https://images.pexels.com/photos/5264825/pexels-photo-5264825.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>`,
   },
   {
-    index: '05',
-    title: 'Basement Waterproofing',
-    description: 'Crystalline and membrane systems to keep basements permanently dry, even under hydrostatic pressure.',
+    title: 'Basement',
+    desc: 'Crystalline and membrane systems to keep basements dry under hydrostatic pressure.',
     href: `${base}services#basement`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>`,
+    img: 'https://images.pexels.com/photos/5391969/pexels-photo-5391969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>`,
   },
   {
-    index: '06',
     title: 'Balcony & Podium',
-    description: 'Flexible waterproofing membranes for balconies and podium slabs that withstand thermal movement.',
+    desc: 'Flexible membranes for balconies and podium slabs that handle thermal movement.',
     href: `${base}services#balcony`,
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="3" y1="9" x2="21" y2="9"/></svg>`,
+    img: 'https://images.pexels.com/photos/3616774/pexels-photo-3616774.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="3" y1="9" x2="21" y2="9"/></svg>`,
   },
+];
+
+const whyUs = [
+  { icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>`, text: 'Free site inspection & detailed quotation' },
+  { icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`, text: 'Premium Dr. Fixit, Fosroc & Sika materials only' },
+  { icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`, text: 'Trained, uniformed, background-verified technicians' },
+  { icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`, text: 'On-time delivery with minimal disruption' },
+  { icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`, text: 'Transparent pricing — no hidden charges' },
 ];
 
 const testimonials = [
-  {
-    name: 'Ramesh Reddy',
-    location: 'Gachibowli',
-    text: 'Had terrace leakage for 3 years — two contractors failed. Mythri resolved it in 2 days. Excellent work and very professional team.',
-  },
-  {
-    name: 'Sunitha Lakshmi',
-    location: 'Kondapur',
-    text: 'Bathroom leaking into the hall below. They waterproofed the entire wet area. No issues at all since then. Highly recommended!',
-  },
-  {
-    name: 'Venkat Rao',
-    location: 'Kukatpally',
-    text: 'Used Dr. Fixit products and their workmanship is top-class. Punctual, clean, and explained every step. Worth every rupee.',
-  },
-];
-
-const faqs = [
-  {
-    q: 'How long does waterproofing last?',
-    a: 'Our terrace and roof waterproofing typically lasts 8–15 years depending on the system used. Bathroom waterproofing lasts 10+ years when properly applied.',
-  },
-  {
-    q: 'Will I need to break tiles for bathroom waterproofing?',
-    a: 'In most cases, yes — proper waterproofing must be done before tiling. However, we also offer injection grouting and crack-sealing for cases where breaking tiles is not an option.',
-  },
-  {
-    q: 'What brands and materials do you use?',
-    a: 'We use premium products from Dr. Fixit (Pidilite), Fosroc, Sika, and Asian Paints SmartCare — all leading brands trusted across India.',
-  },
-  {
-    q: 'How long does the work take?',
-    a: 'A standard bathroom takes 2–3 days. Terrace waterproofing for 1,000 sq. ft. typically takes 3–5 days including curing time.',
-  },
-];
-
-const brands = ['Dr. Fixit', 'Fosroc', 'Sika', 'Asian Paints SmartCare', 'CICO'];
-
-const processSteps = [
-  { n: '01', title: 'Inspect', desc: 'Free on-site visit to identify the root cause — not just the symptom.' },
-  { n: '02', title: 'Diagnose & Quote', desc: 'Detailed written quotation with materials, method, and timeline.' },
-  { n: '03', title: 'Apply', desc: 'Trained technicians execute with premium brand materials only.' },
-  { n: '04', title: 'Test & Hand Over', desc: 'Flood or spray test before handover. You sign off when satisfied.' },
+  { name: 'Ramesh Reddy', location: 'Gachibowli', text: 'Had terrace leakage for 3 years — two contractors failed. Mythri resolved it in 2 days. Excellent and very professional.' },
+  { name: 'Sunitha Lakshmi', location: 'Kondapur', text: 'Bathroom was leaking into the hall. They waterproofed the entire wet area. No issues since then. Highly recommended!' },
+  { name: 'Venkat Rao', location: 'Kukatpally', text: 'Top-class workmanship using Dr. Fixit products. Punctual, clean, and explained every step. Worth every rupee.' },
 ];
 ---
 
 <BaseLayout title="Home" description="Mythri Waterproofing — Professional waterproofing for terrace, bathroom, walls and water tanks in Hyderabad. Free site inspection.">
 
   <!-- ① Hero -->
-  <section class="bg-primary text-white py-24 px-4 relative overflow-hidden">
-    <!-- decorative water drops -->
-    <div class="absolute top-8 right-12 flex gap-3 opacity-10 pointer-events-none" aria-hidden="true">
-      <div class="w-5 h-7 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-water"></div>
-      <div class="w-4 h-5 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-water mt-3"></div>
-      <div class="w-3 h-4 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-water mt-1"></div>
-    </div>
-
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <!-- eyebrow -->
-        <div class="flex items-center gap-2 mb-5">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Hyderabad's Trusted Choice</span>
-        </div>
-
-        <h1 class="font-display font-black leading-none mb-5" style="font-size:clamp(38px,5.2vw,62px);letter-spacing:-1.5px">
-          Stop Leaks.<br><span class="text-accent">For Good.</span>
-        </h1>
-        <p class="text-white/70 text-lg mb-8 leading-relaxed max-w-md">
-          Professional waterproofing for terraces, bathrooms, walls & water tanks. 500+ happy clients across Hyderabad. Free site inspection.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="tel:+919550667148"
-            class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-7 py-4 rounded-xl text-base transition-colors shadow-[0_10px_28px_rgba(220,31,38,.35)]">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call for Free Quote
-          </a>
-          <a href={`${base}services`}
-            class="inline-flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white hover:bg-white/15 font-bold px-7 py-4 rounded-xl text-base transition-colors">
-            View Services
-          </a>
-        </div>
+  <section class="bg-bg-light py-20 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- eyebrow -->
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="w-5 h-0.5 bg-accent"></span>
+        <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Hyderabad's Trusted Waterproofing Experts</span>
+        <span class="w-5 h-0.5 bg-accent"></span>
       </div>
 
-      <!-- Stats + floating badge -->
-      <div class="flex flex-col gap-4">
-        <div class="grid grid-cols-3 gap-3">
-          {[
-            { stat: '500+', label: 'Projects' },
-            { stat: '20+',  label: 'Years' },
-            { stat: '100%', label: 'Satisfaction' },
-          ].map(({ stat, label }) => (
-            <div class="bg-white/8 border border-white/10 rounded-2xl p-5 text-center">
-              <div class="font-display font-black text-3xl text-accent">{stat}</div>
-              <div class="text-white/60 text-xs mt-1">{label}</div>
-            </div>
-          ))}
-        </div>
-        <!-- floating warranty card -->
-        <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-xl self-start">
-          <div class="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <div>
-            <div class="font-display font-black text-primary text-sm">Work Guaranteed</div>
-            <div class="text-muted text-xs">Every job backed by written guarantee</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(36px,4.8vw,58px);letter-spacing:-1.4px">
+        Stop Leaks. Protect Your Home.<br><span class="text-accent">For Good.</span>
+      </h1>
+      <p class="text-ink-muted text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        Professional waterproofing for terraces, bathrooms, walls & water tanks. 420+ happy clients across Hyderabad, Nalgonda, Vizag & Bangalore. Free site inspection.
+      </p>
 
-  <!-- ② Trusted brands strip -->
-  <section class="bg-white border-y border-line py-5 px-4">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-center text-muted text-xs uppercase tracking-[1.6px] font-bold mb-4">We use products from trusted brands</p>
-      <div class="flex flex-wrap justify-center gap-4 items-center">
-        {brands.map((brand) => (
-          <div class="bg-paper border border-line rounded-lg px-5 py-2 text-primary font-bold text-sm">
-            {brand}
-          </div>
+      <!-- Trust chips -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        {['Free site visit', '20+ years experience', '420+ projects done', 'Mon–Sat 9AM–5PM'].map(chip => (
+          <span class="bg-white border border-line text-ink-mid font-semibold text-sm px-4 py-2 rounded-[9px] shadow-sm">
+            {chip}
+          </span>
         ))}
       </div>
-    </div>
-  </section>
 
-  <!-- ③ Services -->
-  <section class="py-24 px-4 bg-paper">
-    <div class="max-w-6xl mx-auto">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">What We Do</span>
-        </div>
-        <h2 class="font-display font-black text-primary leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Our Services
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map(({ index, title, description, href, icon }) => (
-          <a href={href}
-            class="bg-white border border-line rounded-2xl p-7 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 group">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-[13px] bg-primary flex items-center justify-center shrink-0" set:html={icon}></div>
-              <span class="font-display font-black text-sm text-line group-hover:text-accent transition-colors">{index}</span>
-            </div>
-            <div>
-              <h3 class="font-display font-black text-primary text-lg mb-2">{title}</h3>
-              <p class="text-muted text-sm leading-relaxed">{description}</p>
-            </div>
-            <div class="flex items-center gap-1 text-accent font-bold text-sm mt-auto">
-              Learn more
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-        ))}
-      </div>
-      <div class="mt-10 text-center">
-        <a href={`${base}services`} class="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 py-3 rounded-xl transition-colors">
-          See All Service Details
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ④ Process -->
-  <section class="bg-primary text-white py-24 px-4 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true">
-      <div class="absolute top-6 right-20 w-8 h-11 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-water"></div>
-      <div class="absolute top-16 right-32 w-5 h-7 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-water"></div>
-    </div>
-    <div class="max-w-5xl mx-auto relative">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-water"></span>
-          <span class="text-water-light font-bold text-xs uppercase tracking-[1.6px]">How It Works</span>
-        </div>
-        <h2 class="font-display font-black leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Our Process
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {processSteps.map(({ n, title, desc }) => (
-          <div class="bg-white/8 border border-white/10 rounded-2xl p-6">
-            <div class="font-display font-black text-4xl text-accent/30 mb-4 leading-none">{n}</div>
-            <div class="font-display font-black text-white text-lg mb-2">{title}</div>
-            <p class="text-white/60 text-sm leading-relaxed">{desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑤ Before / After slider -->
-  <section class="py-24 px-4 bg-paper">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Real Results</span>
-        </div>
-        <h2 class="font-display font-black text-primary leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Before & After
-        </h2>
-        <p class="text-muted mt-3 max-w-lg">Drag the handle to compare. Every transformation below is a real Hyderabad project.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          {
-            before: 'https://images.pexels.com/photos/5264807/pexels-photo-5264807.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-            after:  'https://images.pexels.com/photos/5264825/pexels-photo-5264825.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-            caption: 'Terrace Leak Repair — Gachibowli',
-          },
-          {
-            before: 'https://images.pexels.com/photos/3616774/pexels-photo-3616774.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-            after:  'https://images.pexels.com/photos/7167064/pexels-photo-7167064.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-            caption: 'Bathroom Waterproofing — Madhapur',
-          },
-        ].map(({ before, after, caption }, i) => (
-          <div class="rounded-2xl overflow-hidden border border-line shadow-md">
-            <div class="relative h-56 select-none before-after-wrap" data-idx={i}>
-              <!-- After (bottom layer, full width) -->
-              <img src={after} alt={`After: ${caption}`} class="absolute inset-0 w-full h-full object-cover" />
-              <!-- Before (top layer, clipped by slider) -->
-              <div class="before-clip absolute inset-0 overflow-hidden" style="width:50%">
-                <img src={before} alt={`Before: ${caption}`} class="absolute inset-0 w-full h-full object-cover" style="width:200%" />
-              </div>
-              <!-- Labels -->
-              <span class="absolute top-3 left-3 bg-black/60 text-white text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">Before</span>
-              <span class="absolute top-3 right-3 bg-accent text-white text-xs font-bold px-2.5 py-1 rounded-lg">After</span>
-              <!-- Drag handle line -->
-              <div class="before-handle absolute top-0 bottom-0 flex flex-col items-center pointer-events-none" style="left:50%;transform:translateX(-50%)">
-                <div class="w-0.5 h-full bg-white/80"></div>
-                <div class="absolute top-1/2 -translate-y-1/2 w-9 h-9 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize pointer-events-auto">
-                  <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>
-                </div>
-              </div>
-              <!-- invisible range input for drag -->
-              <input type="range" min="0" max="100" value="50" class="before-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize" />
-            </div>
-            <div class="bg-white px-5 py-3 text-sm font-bold text-primary">{caption}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑥ Recent Work -->
-  <section class="py-24 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Portfolio</span>
-        </div>
-        <h2 class="font-display font-black text-primary leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Recent Work
-        </h2>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[
-          { img: 'https://images.pexels.com/photos/5264807/pexels-photo-5264807.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Terrace — Gachibowli' },
-          { img: 'https://images.pexels.com/photos/7167064/pexels-photo-7167064.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Bathroom — Madhapur' },
-          { img: 'https://images.pexels.com/photos/5691597/pexels-photo-5691597.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Wall — Kondapur' },
-          { img: 'https://images.pexels.com/photos/5391969/pexels-photo-5391969.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', label: 'Rooftop — Kukatpally' },
-        ].map(({ img, label }) => (
-          <div class="aspect-square rounded-2xl overflow-hidden group relative border border-line">
-            <img src={img} alt={label} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
-              <span class="text-white text-xs font-bold">{label}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div class="mt-10 text-center">
-        <a href={`${base}gallery`} class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded-xl transition-colors">
-          View Full Gallery
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑦ Certifications strip -->
-  <section class="bg-paper border-y border-line py-10 px-4">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-center text-muted text-xs uppercase tracking-[1.6px] font-bold mb-7">Trusted materials · ISO-grade quality</p>
-      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-        {['Dr. Fixit Certified Applicator', 'Fosroc Approved', 'Sika Partner', 'Asian Paints SmartCare', 'ISO-grade Materials'].map((cert) => (
-          <div class="flex items-center gap-2 text-muted font-bold text-sm">
-            <svg class="w-4 h-4 text-water shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            {cert}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑧ Why choose us -->
-  <section class="py-24 px-4 bg-white">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Why Us</span>
-        </div>
-        <h2 class="font-display font-black text-primary leading-none mb-5" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Why Hyderabad<br>Trusts Mythri
-        </h2>
-        <p class="text-muted mb-8 leading-relaxed">We diagnose the root cause first — then apply the right solution. No shortcuts, no repeat visits.</p>
-        <ul class="space-y-5">
-          {[
-            { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>`, text: 'Free site inspection & detailed quotation' },
-            { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`, text: 'Premium Dr. Fixit, Fosroc & Sika materials only' },
-            { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`, text: 'Trained, uniformed, background-verified technicians' },
-            { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`, text: 'Transparent pricing — no hidden charges' },
-            { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`, text: 'On-time delivery with minimal disruption' },
-          ].map(({ icon, text }) => (
-            <li class="flex items-start gap-4">
-              <div class="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0" set:html={icon}></div>
-              <span class="text-primary font-medium mt-1.5">{text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="flex flex-col gap-4">
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="tel:+919550667148"
-          class="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-4 rounded-xl transition-colors shadow-[0_10px_28px_rgba(220,31,38,.3)]">
+          class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors shadow-[0_12px_28px_rgba(220,31,38,.3)]">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Now — +91 95506 67148
+          Call for Free Quote
         </a>
         <a href="https://wa.me/919550667148?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener"
-          class="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl transition-colors"
-          style="background:#25D366">
-          <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          class="inline-flex items-center justify-center gap-2 bg-white border-2 border-line hover:border-primary text-ink font-bold px-8 py-4 rounded-[13px] text-base transition-colors">
+          <svg class="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           WhatsApp Us
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ⑨ Testimonials -->
-  <section class="py-24 px-4 bg-paper">
+  <!-- ② Brand strip -->
+  <section class="bg-brand py-5 px-4">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-6">
+      <span class="text-white/40 text-xs uppercase tracking-[1.6px] font-bold">We use</span>
+      {['Dr. Fixit', 'Fosroc', 'Sika', 'Asian Paints SmartCare', 'CICO'].map(b => (
+        <span class="text-white/70 font-bold text-sm">{b}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- ③ Services -->
+  <section class="py-20 px-4 bg-white">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Reviews</span>
+      <div class="mb-12 text-center">
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="w-5 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">What We Do</span>
+          <span class="w-5 h-0.5 bg-accent"></span>
         </div>
-        <h2 class="font-display font-black text-primary leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          What Clients Say
+        <h2 class="font-display font-extrabold text-ink" style="font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px">Our Services</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {services.map(({ title, desc, href, img, icon }) => (
+          <a href={href}
+            class="bg-white border border-line rounded-[20px] overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-200 group">
+            <div class="aspect-[16/10] overflow-hidden bg-bg-soft">
+              <img src={img} alt={title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-accent" set:html={icon}></span>
+                <h3 class="font-display font-bold text-ink text-[18px]">{title}</h3>
+              </div>
+              <p class="text-ink-muted text-sm leading-relaxed mb-3">{desc}</p>
+              <span class="text-accent font-semibold text-sm flex items-center gap-1">
+                Learn more
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ Why Choose Us -->
+  <section class="py-20 px-4 bg-bg-warm">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-5 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Why Us</span>
+        </div>
+        <h2 class="font-display font-extrabold text-ink mb-5" style="font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px">
+          Why Hyderabad<br>Trusts Mythri
         </h2>
-        <p class="text-muted mt-2">500+ satisfied customers across Hyderabad</p>
+        <p class="text-ink-muted mb-8 leading-relaxed">We diagnose the root cause first — then apply the right solution. No shortcuts, no repeat visits.</p>
+        <ul class="space-y-5">
+          {whyUs.map(({ icon, text }) => (
+            <li class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white border border-line flex items-center justify-center text-accent shrink-0" set:html={icon}></div>
+              <span class="text-ink-mid font-medium">{text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 gap-4">
+        {[
+          { stat: '420+', label: 'Projects Completed', color: 'text-accent' },
+          { stat: '20+',  label: 'Years Experience',   color: 'text-accent' },
+          { stat: '100%', label: 'Client Satisfaction', color: 'text-accent' },
+          { stat: 'Free', label: 'Site Inspection',    color: 'text-accent' },
+        ].map(({ stat, label, color }) => (
+          <div class="bg-white border border-line rounded-2xl p-6 text-center shadow-sm">
+            <div class={`font-display font-extrabold text-4xl mb-1 ${color}`}>{stat}</div>
+            <div class="text-ink-subtle text-sm">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ Testimonials -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 text-center">
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="w-5 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Reviews</span>
+          <span class="w-5 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="font-display font-extrabold text-ink" style="font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px">What Clients Say</h2>
+        <p class="text-ink-muted mt-2">420+ satisfied customers across Hyderabad, Nalgonda, Vizag & Bangalore</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map(({ name, location, text }) => (
-          <div class="bg-white border border-line rounded-2xl p-7 flex flex-col gap-5">
+          <div class="bg-bg-soft border border-line rounded-2xl p-7 flex flex-col gap-5">
             <div class="flex gap-1">
               {Array.from({ length: 5 }).map(() => (
                 <svg class="w-4 h-4" fill="#FBB829" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
             </div>
-            <p class="text-muted leading-relaxed flex-1">"{text}"</p>
+            <p class="text-ink-muted leading-relaxed flex-1">"{text}"</p>
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white font-display font-black text-sm shrink-0">
+              <div class="w-9 h-9 rounded-full bg-ink flex items-center justify-center text-white font-display font-bold text-sm shrink-0">
                 {name[0]}
               </div>
               <div>
-                <div class="font-bold text-primary text-sm">{name}</div>
-                <div class="text-muted text-xs">{location}, Hyderabad</div>
+                <div class="font-bold text-ink text-sm">{name}</div>
+                <div class="text-ink-subtle text-xs">{location}, Hyderabad</div>
               </div>
             </div>
           </div>
@@ -429,57 +225,20 @@ const processSteps = [
     </div>
   </section>
 
-  <!-- ⑩ FAQ -->
-  <section class="py-24 px-4 bg-white">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-14">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-6 h-0.5 bg-accent"></span>
-          <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">FAQ</span>
-        </div>
-        <h2 class="font-display font-black text-primary leading-none" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
-          Common Questions
-        </h2>
-      </div>
-      <div class="space-y-3" id="faq-list">
-        {faqs.map(({ q, a }, i) => (
-          <div class="bg-paper border border-line rounded-xl overflow-hidden faq-item">
-            <button
-              class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-primary hover:text-accent transition-colors faq-trigger"
-              data-index={i}
-            >
-              <span>{q}</span>
-              <svg class="w-5 h-5 shrink-0 transition-transform text-muted faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-5 text-muted leading-relaxed border-t border-line pt-4">
-              {a}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑪ Final CTA -->
-  <section class="bg-accent py-20 px-4 text-white text-center">
-    <div class="flex items-center justify-center gap-2 mb-4">
-      <span class="w-6 h-0.5 bg-white/40"></span>
-      <span class="text-white/80 font-bold text-xs uppercase tracking-[1.6px]">Get Started</span>
-      <span class="w-6 h-0.5 bg-white/40"></span>
-    </div>
-    <h2 class="font-display font-black leading-none mb-3" style="font-size:clamp(30px,3.6vw,44px);letter-spacing:-1px">
+  <!-- ⑥ Final CTA -->
+  <section class="py-20 px-4 text-white text-center" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D0A0A 100%)">
+    <h2 class="font-display font-extrabold mb-3" style="font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px">
       Ready to Fix Your Leakage?
     </h2>
-    <p class="text-white/80 text-lg mb-10 max-w-xl mx-auto">Free site inspection. Detailed quote. No obligations. Call or WhatsApp us now.</p>
+    <p class="text-white/80 text-lg mb-10 max-w-xl mx-auto">Free site inspection. No obligations. Call or WhatsApp us right now.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="tel:+919550667148" class="flex items-center justify-center gap-2 bg-white text-accent hover:bg-orange-50 font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+      <a href="tel:+919550667148"
+        class="inline-flex items-center justify-center gap-2 bg-white text-accent hover:bg-gray-100 font-bold px-8 py-4 rounded-[13px] text-lg transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         +91 95506 67148
       </a>
       <a href="https://wa.me/919550667148?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener"
-        class="flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+        class="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-[13px] text-lg transition-colors"
         style="background:#25D366">
         <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
         WhatsApp Us
@@ -488,38 +247,3 @@ const processSteps = [
   </section>
 
 </BaseLayout>
-
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-trigger').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const answer = item?.querySelector('.faq-answer');
-      const icon = btn.querySelector('.faq-icon');
-      const isOpen = !answer?.classList.contains('hidden');
-
-      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
-
-      if (!isOpen) {
-        answer?.classList.remove('hidden');
-        icon?.classList.add('rotate-180');
-      }
-    });
-  });
-
-  // Before/after slider
-  document.querySelectorAll('.before-after-wrap').forEach((wrap) => {
-    const clip = wrap.querySelector('.before-clip') as HTMLElement;
-    const handle = wrap.querySelector('.before-handle') as HTMLElement;
-    const range = wrap.querySelector('.before-range') as HTMLInputElement;
-
-    function update(val: number) {
-      const pct = val + '%';
-      clip.style.width = pct;
-      handle.style.left = pct;
-    }
-
-    range.addEventListener('input', () => update(Number(range.value)));
-  });
-</script>
