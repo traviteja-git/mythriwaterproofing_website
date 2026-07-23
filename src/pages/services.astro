@@ -8,6 +8,7 @@ const services = [
     id: 'terrace',
     short: 'Terrace & Roof',
     title: 'Terrace & Roof Waterproofing',
+    img: `${base}images/terrace/terrace-coating-1.jpg`,
     description: 'Terrace leakages are one of the most common and costly problems for building owners. Our terrace waterproofing system creates a robust, seamless barrier that prevents water ingress for years.',
     steps: [
       'Surface preparation — cleaning, crack repair, and leveling',
@@ -29,6 +30,7 @@ const services = [
     id: 'bathroom',
     short: 'Bathroom & Wet Area',
     title: 'Bathroom & Wet Area Waterproofing',
+    img: `${base}images/bathroom-epoxy/epoxy-1.jpg`,
     description: 'Moisture in bathrooms can silently damage structural slabs, walls, and flooring over time. Our wet area waterproofing ensures every vulnerable surface is sealed before tiling.',
     steps: [
       'Detailed inspection of joints, corners, and drain points',
@@ -50,6 +52,7 @@ const services = [
     id: 'wall',
     short: 'Wall & Facade',
     title: 'Wall & Facade Waterproofing',
+    img: `${base}images/others/wall-facade.jpg`,
     description: 'Exterior walls face constant exposure to rain, wind, and humidity. Damp walls lead to efflorescence, mold, and paint peeling. Our facade treatments stop water at the surface.',
     steps: [
       'Assessment of wall cracks, joints, and surface condition',
@@ -71,6 +74,7 @@ const services = [
     id: 'tank',
     short: 'Water Tank & Sump',
     title: 'Water Tank & Sump Waterproofing',
+    img: `${base}images/others/water-tank.jpg`,
     description: 'Leaking water tanks waste thousands of litres and damage surrounding structures. We use non-toxic, potable-water-safe systems for overhead tanks, underground sumps, and cisterns.',
     steps: [
       'Tank draining and surface cleaning',
@@ -92,6 +96,7 @@ const services = [
     id: 'basement',
     short: 'Basement',
     title: 'Basement Waterproofing',
+    img: 'https://images.pexels.com/photos/4092026/pexels-photo-4092026.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Basements face constant hydrostatic pressure from groundwater. Our negative-side and positive-side waterproofing systems keep basements permanently dry in all conditions.',
     steps: [
       'Hydrostatic pressure assessment and drainage mapping',
@@ -114,6 +119,7 @@ const services = [
     id: 'balcony',
     short: 'Balcony & Podium',
     title: 'Balcony & Podium Waterproofing',
+    img: `${base}images/others/balcony.png`,
     description: 'Balconies are exposed to direct rain and thermal movement, making them prone to cracking and seepage. Our flexible membrane systems accommodate movement without cracking.',
     steps: [
       'Surface inspection and cleaning',
@@ -129,6 +135,89 @@ const services = [
       <path d="M12 30V14M24 30V14M36 30V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
       <path d="M12 14h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
       <path d="M8 20h4M8 24h4M8 28h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+    </svg>`,
+  },
+  {
+    id: 'grouting',
+    short: 'Pressure Grouting',
+    title: 'Pressure Grouting',
+    img: `${base}images/others/pressure-grouting.png`,
+    description: 'Pressure grouting injects cementitious or polyurethane grout into cracks, voids, and joints under controlled pressure — permanently sealing water pathways through walls, slabs, and foundations.',
+    steps: [
+      'Identify crack lines and injection points',
+      'Drill injection holes at regular intervals',
+      'Insert packers and flush with water',
+      'Inject grout or resin under controlled pressure',
+      'Seal injection points and inspect for completeness',
+    ],
+    materials: 'Polyurethane injection resins, Fosroc Nitofill, cementitious grout mixes',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M24 6v36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M14 16l10-10 10 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="10" y="34" width="28" height="8" rx="2" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M16 22h16M16 28h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    </svg>`,
+  },
+  {
+    id: 'chemical',
+    short: 'Chemical Coating',
+    title: 'Chemical Coating',
+    img: 'https://images.pexels.com/photos/6474490/pexels-photo-6474490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Chemical waterproofing coatings form a tough, seamless membrane that repels water on terraces, walls, and concrete surfaces. Ideal as a standalone treatment or as a base for tile finishes.',
+    steps: [
+      'Surface cleaning and defect repair',
+      'Primer coat for adhesion',
+      'First chemical coating layer application',
+      'Second coat after curing (opposite direction)',
+      'Final inspection and water test',
+    ],
+    materials: 'Dr. Fixit Roofseal, Fosroc Brushbond, acrylic polymer coatings',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M18 6h12v16l6 8v12H12V30l6-8V6Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 30h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 6h8M20 12h8M20 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    </svg>`,
+  },
+  {
+    id: 'cracks',
+    short: 'Outside Wall Cracks',
+    title: 'Outside Wall Cracks & Expansion Joints',
+    img: `${base}images/outside-cracks/crack-1.jpg`,
+    description: 'External wall cracks and failed expansion joints are primary entry points for water. We diagnose crack types, apply the correct flexible sealants, and protect with weather-resistant coatings.',
+    steps: [
+      'Crack mapping and cause assessment',
+      'Widen and clean cracks for proper sealant adhesion',
+      'Fill with flexible polyurethane or epoxy sealant',
+      'Seal expansion joints with backer rod and joint sealant',
+      'Apply weather-resistant coating over repaired areas',
+    ],
+    materials: 'Sikaflex, Fosroc Thioflex, epoxy crack fillers, elastomeric wall coatings',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <rect x="4" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M20 8l-4 10 6 4-6 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 20h7M37 20h7M4 28h7M37 28h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    </svg>`,
+  },
+  {
+    id: 'brick-batting',
+    short: 'Brick Batting',
+    title: 'Brick Batting Works',
+    img: `${base}images/brick-batting/brick-2.jpg`,
+    description: 'Brick batting is a proven traditional waterproofing method for terraces and flat roofs. Broken bricks laid in lime mortar create an insulating, water-resistant layer that also reduces heat transfer.',
+    steps: [
+      'Clean and prepare the RCC slab surface',
+      'Apply waterproofing base coat on the slab',
+      'Lay broken bricks flat in lime mortar with proper slope',
+      'Fill joints with lime mortar and finish smooth',
+      'Final cement plaster or tile finish as required',
+    ],
+    materials: 'Lime mortar, broken bricks, Dr. Fixit waterproofing admixtures, cement plaster',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <rect x="4" y="10" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="26" y="10" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="13" y="20" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="4" y="30" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="26" y="30" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="2.5"/>
     </svg>`,
   },
 ];
@@ -159,7 +248,7 @@ const services = [
   <!-- Services detail -->
   <section class="py-16 px-4 bg-bg-light">
     <div class="max-w-5xl mx-auto space-y-10">
-      {services.map(({ id, svg, title, description, steps, materials }) => (
+      {services.map(({ id, svg, title, description, steps, materials, img }) => (
         <div id={id} class="bg-white rounded-2xl border border-line shadow-sm overflow-hidden scroll-mt-24">
 
           <!-- Card header -->
@@ -168,34 +257,49 @@ const services = [
             <h2 class="font-display text-xl font-extrabold text-white">{title}</h2>
           </div>
 
-          <div class="p-8 grid md:grid-cols-2 gap-8">
-            <!-- Left: description + materials -->
-            <div>
-              <p class="text-ink-muted leading-relaxed mb-6">{description}</p>
-              <div class="bg-bg-soft rounded-xl p-4 border border-line">
-                <div class="text-xs font-bold text-ink-subtle uppercase tracking-[1.2px] mb-2">Materials Used</div>
-                <div class="text-ink-muted text-sm leading-relaxed">{materials}</div>
+          <div class="flex flex-col md:flex-row">
+            <!-- Photo column -->
+            {img && (
+              <div class="md:w-72 lg:w-80 shrink-0 overflow-hidden bg-bg-soft">
+                <img
+                  src={img}
+                  alt={title}
+                  loading="lazy"
+                  class="w-full h-56 md:h-full object-cover"
+                />
               </div>
-            </div>
+            )}
 
-            <!-- Right: process steps + CTA -->
-            <div>
-              <div class="font-bold text-ink text-sm uppercase tracking-[1px] mb-4">Our Process</div>
-              <ol class="space-y-3 mb-6">
-                {steps.map((step, idx) => (
-                  <li class="flex items-start gap-3">
-                    <span class="w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                      {idx + 1}
-                    </span>
-                    <span class="text-ink-muted text-sm leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <a href={`${base}contact`}
-                class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-[10px] transition-colors text-sm shadow-[0_4px_14px_rgba(204,31,31,.25)]">
-                Get a Quote for This Service
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+            <!-- Content -->
+            <div class="flex-1 p-8 grid md:grid-cols-2 gap-8">
+              <!-- Left: description + materials -->
+              <div>
+                <p class="text-ink-muted leading-relaxed mb-6">{description}</p>
+                <div class="bg-bg-soft rounded-xl p-4 border border-line">
+                  <div class="text-xs font-bold text-ink-subtle uppercase tracking-[1.2px] mb-2">Materials Used</div>
+                  <div class="text-ink-muted text-sm leading-relaxed">{materials}</div>
+                </div>
+              </div>
+
+              <!-- Right: process steps + CTA -->
+              <div>
+                <div class="font-bold text-ink text-sm uppercase tracking-[1px] mb-4">Our Process</div>
+                <ol class="space-y-3 mb-6">
+                  {steps.map((step, idx) => (
+                    <li class="flex items-start gap-3">
+                      <span class="w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                        {idx + 1}
+                      </span>
+                      <span class="text-ink-muted text-sm leading-relaxed">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <a href={`${base}contact`}
+                  class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-[10px] transition-colors text-sm shadow-[0_4px_14px_rgba(204,31,31,.25)]">
+                  Get a Quote for This Service
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -206,7 +310,7 @@ const services = [
   <!-- CTA -->
   <section class="py-16 px-4 text-center" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D0A0A 100%)">
     <h2 class="font-display text-3xl font-extrabold text-white mb-3">Not Sure Which Service You Need?</h2>
-    <p class="text-white/60 text-lg mb-8">Call us — our experts will inspect your property for free and recommend the right solution.</p>
+    <p class="text-white/60 text-lg mb-8">Call us — our experts will inspect your property for free (within Hyderabad) and recommend the right solution.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="tel:+919550667148"
         class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors shadow-[0_8px_24px_rgba(204,31,31,.35)]">
