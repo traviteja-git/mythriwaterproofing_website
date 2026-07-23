@@ -2,77 +2,178 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
+
+const values = [
+  {
+    title: 'Mission',
+    desc: 'To provide lasting waterproofing solutions that protect homes and buildings for years — not months.',
+    svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  },
+  {
+    title: 'Quality',
+    desc: 'We use only premium-grade materials — Dr. Fixit, Fosroc, Sika — and proven techniques on every job.',
+    svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"><path d="M20 4l4 8 9 1.3-6.5 6.3 1.5 9L20 24l-8 4.6 1.5-9L7 13.3l9-1.3L20 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 28l-6 6M27 28l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  },
+  {
+    title: 'Integrity',
+    desc: 'Transparent pricing, honest assessments, and no upselling — just the right fix for your problem.',
+    svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"><path d="M20 4s-12 4-12 16v8l12 8 12-8v-8C32 8 20 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  },
+];
+
+const areas = [
+  'Hyderabad', 'Secunderabad', 'Uppal', 'Gachibowli',
+  'Kondapur', 'Madhapur', 'Kukatpally', 'Miyapur',
+  'Banjara Hills', 'Jubilee Hills', 'Nalgonda', 'Vizag', 'Bangalore',
+];
+
+const stats = [
+  { value: '20+', label: 'Years Experience' },
+  { value: '1000+', label: 'Projects Completed' },
+  { value: '100%', label: 'Customer Satisfaction' },
+  { value: 'Free', label: 'Site Inspection' },
+];
 ---
 
-<BaseLayout title="About Us" description="Learn about Mythri Waterproofing — our story, mission, and the team behind Hyderabad's trusted waterproofing service.">
+<BaseLayout
+  title="About Us — Mythri Waterproofing"
+  description="Learn about Mythri Water Proofing Solutions — founded by Tholupunoori Mallesham and Tholupunoori Niranjan, serving Hyderabad for 20+ years."
+>
 
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">About Mythri Waterproofing</h1>
-    <p class="text-blue-100 text-lg max-w-2xl mx-auto">A decade of trust, one leak at a time.</p>
+  <section class="bg-brand text-white py-20 px-4 text-center">
+    <p class="text-accent text-xs font-bold uppercase tracking-[2px] mb-3">Who We Are</p>
+    <h1 class="font-display text-4xl md:text-5xl font-extrabold mb-4">About Mythri Waterproofing</h1>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto">
+      20+ years of protecting homes and buildings across Hyderabad — one leak solved at a time.
+    </p>
   </section>
 
+  <!-- Stats strip -->
+  <div class="bg-accent">
+    <div class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center">
+      {stats.map(({ value, label }) => (
+        <div>
+          <div class="font-display text-3xl font-extrabold">{value}</div>
+          <div class="text-white/80 text-xs font-semibold uppercase tracking-wide mt-1">{label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Our Story -->
-  <section class="py-20 px-4">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <section class="py-20 px-4 bg-bg-light">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
       <div>
-        <h2 class="text-3xl font-extrabold text-primary mb-4">Our Story</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          Mythri Waterproofing was founded with a simple mission: deliver waterproofing solutions that actually work, backed by honest advice and fair pricing. Over 20 years ago, our founder identified a critical gap in the market — homeowners were paying repeatedly for short-term fixes that never addressed root causes.
+        <p class="text-accent text-xs font-bold uppercase tracking-[2px] mb-3">Our Story</p>
+        <h2 class="font-display text-3xl font-extrabold text-ink mb-6">Built on Trust,<br/>Proven by Results</h2>
+        <p class="text-ink-muted leading-relaxed mb-4">
+          Mythri Water Proofing Solutions was founded by <strong class="text-ink">Tholupunoori Mallesham</strong> and <strong class="text-ink">Tholupunoori Niranjan</strong> with a single purpose — to deliver waterproofing that actually lasts. After seeing homeowners pay repeatedly for quick fixes that failed within months, they built a company around doing it right the first time.
         </p>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          We set out to change that by combining the best materials, trained technicians, and a thorough diagnostic approach. Today, we've completed over 500 projects across Hyderabad and have become the go-to waterproofing partner for both residential and commercial clients.
+        <p class="text-ink-muted leading-relaxed mb-4">
+          Over two decades, we've grown from a small local team in Uppal, Hyderabad into a trusted name across Telangana and beyond — completing 1000+ projects for residential apartments, commercial buildings, hospitals, and independent homes.
         </p>
-        <p class="text-gray-600 leading-relaxed">
-          Every project we take on is treated like it's our own home — because we know how much your property means to you.
+        <p class="text-ink-muted leading-relaxed">
+          Every project is treated as if it were our own property. We diagnose the root cause, recommend the right system, and stand behind our work — every single time.
         </p>
       </div>
-      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-12 flex items-center justify-center text-8xl">
-        🏗️
+
+      <!-- Founder card -->
+      <div class="bg-white rounded-2xl border border-line shadow-sm p-8">
+        <div class="flex items-center gap-4 mb-6 pb-6 border-b border-line">
+          <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-extrabold text-ink text-base">Tholupunoori Mallesham</div>
+            <div class="text-accent text-xs font-semibold">Founder & Director</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-extrabold text-ink text-base">Tholupunoori Niranjan</div>
+            <div class="text-accent text-xs font-semibold">Operations Manager</div>
+          </div>
+        </div>
+        <div class="space-y-3 text-sm text-ink-muted">
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Uppal, Hyderabad — 500039
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 95506 67148 &nbsp;|&nbsp; +91 90529 45434
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            mythriwaterproofingworks@gmail.com
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Sat, 9 AM – 5 PM
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Mission & Values -->
-  <section class="bg-gray-50 py-20 px-4">
+  <section class="py-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-primary text-center mb-12">Our Mission & Values</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          { icon: '🎯', title: 'Mission', desc: 'To provide lasting waterproofing solutions that protect homes and buildings for years, not months.' },
-          { icon: '💎', title: 'Quality', desc: 'We use only premium-grade materials and proven techniques to ensure every job meets our high standards.' },
-          { icon: '🤝', title: 'Integrity', desc: 'Transparent pricing, honest assessments, and no upselling — just the right solution for your problem.' },
-        ].map(({ icon, title, desc }) => (
-          <div class="bg-white rounded-2xl p-8 text-center shadow-md border border-gray-100">
-            <div class="text-5xl mb-4">{icon}</div>
-            <h3 class="text-xl font-bold text-primary mb-2">{title}</h3>
-            <p class="text-gray-600">{desc}</p>
+      <div class="text-center mb-12">
+        <p class="text-accent text-xs font-bold uppercase tracking-[2px] mb-3">What Drives Us</p>
+        <h2 class="font-display text-3xl font-extrabold text-ink">Our Mission & Values</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {values.map(({ svg, title, desc }) => (
+          <div class="bg-white rounded-2xl p-8 border border-line shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-accent mb-4" set:html={svg} />
+            <h3 class="font-display text-lg font-extrabold text-ink mb-2">{title}</h3>
+            <p class="text-ink-muted text-sm leading-relaxed">{desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Service Area -->
-  <section class="py-20 px-4">
+  <!-- Service Areas -->
+  <section class="py-20 px-4 bg-bg-light">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-extrabold text-primary mb-4">Service Area</h2>
-      <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">We serve residential and commercial clients across Greater Hyderabad, including Secunderabad, Gachibowli, Kondapur, Madhapur, Kukatpally, and surrounding areas.</p>
-      <div class="bg-primary/5 border border-primary/20 rounded-2xl p-8 inline-block">
-        <div class="text-6xl mb-3">📍</div>
-        <div class="font-bold text-primary text-lg">Greater Hyderabad, Telangana</div>
-        <div class="text-gray-500 text-sm mt-1">Serving all major areas and suburbs</div>
+      <p class="text-accent text-xs font-bold uppercase tracking-[2px] mb-3">Where We Work</p>
+      <h2 class="font-display text-3xl font-extrabold text-ink mb-4">Service Areas</h2>
+      <p class="text-ink-muted text-lg mb-10 max-w-2xl mx-auto">
+        We serve residential and commercial clients across Hyderabad and beyond.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        {areas.map((area) => (
+          <span class="flex items-center gap-1.5 bg-white border border-line text-ink-mid text-sm font-semibold px-4 py-2 rounded-full shadow-sm">
+            <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            {area}
+          </span>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-accent py-16 px-4 text-white text-center">
-    <h2 class="text-3xl font-extrabold mb-3">Let's Work Together</h2>
-    <p class="text-orange-100 text-lg mb-8">Get in touch for a free site inspection and quote.</p>
-    <a href={`${base}contact`} class="bg-white text-accent hover:bg-orange-50 font-bold px-10 py-4 rounded-xl text-lg transition-colors">
-      Contact Us
-    </a>
+  <section class="py-16 px-4 text-center" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D0A0A 100%)">
+    <h2 class="font-display text-3xl font-extrabold text-white mb-3">Let's Protect Your Property</h2>
+    <p class="text-white/60 text-lg mb-8">Get in touch for a free site inspection and honest quote.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={`${base}contact`}
+        class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors shadow-[0_8px_24px_rgba(204,31,31,.35)]">
+        Contact Us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+919550667148"
+        class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors border border-white/20">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
   </section>
 
 </BaseLayout>
