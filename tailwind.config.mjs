@@ -1,19 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}'],
   theme: {
     extend: {
       colors: {
-        primary: { DEFAULT: '#16181D', light: '#1F2127', dark: '#0E0F12' },
-        accent:  { DEFAULT: '#DC1F26', light: '#E5484D', dark: '#B5161C' },
-        water:   { DEFAULT: '#1FA0DE', light: '#5FC4ED', dark: '#1577AE' },
-        paper:   '#F7F5F2',
-        line:    '#E7E3DD',
-        muted:   '#5A5C63',
+        primary: {
+          DEFAULT: '#1A1A1A',
+          light:   '#333333',
+          dark:    '#0F0F0F',
+        },
+        accent: {
+          DEFAULT: '#CC1F1F',
+          dark:    '#A81818',
+        },
+        water: '#1B72C0',
+        ink: {
+          DEFAULT: '#1A1A1A',
+          mid:     '#444444',
+          muted:   '#666666',
+          subtle:  '#999999',
+        },
+        bg: {
+          light:  '#F7F7F7',
+          warm:   '#F9F9F9',
+          soft:   '#F2F2F2',
+        },
+        line:  '#E0E0E0',
+        brand: '#111111',
       },
       fontFamily: {
-        sans:    ['"Public Sans"', 'sans-serif'],
-        display: ['Archivo', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        sans:    ['"Public Sans"', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 const services = [
   {
     id: 'terrace',
-    icon: '🏠',
+    short: 'Terrace & Roof',
     title: 'Terrace & Roof Waterproofing',
     description: 'Terrace leakages are one of the most common and costly problems for building owners. Our terrace waterproofing system creates a robust, seamless barrier that prevents water ingress for years.',
     steps: [
@@ -17,10 +17,17 @@ const services = [
       'Drainage slope correction where needed',
     ],
     materials: 'Dr. Fixit, Fosroc, Sika — crystalline or polymer-modified bitumen membranes',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M6 20L24 6l18 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 17v21a1 1 0 0 0 1 1h26a1 1 0 0 0 1-1V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6 36h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M14 38v2M24 38v2M34 38v2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="24" cy="22" r="4" stroke="currentColor" stroke-width="2"/>
+    </svg>`,
   },
   {
     id: 'bathroom',
-    icon: '🚿',
+    short: 'Bathroom & Wet Area',
     title: 'Bathroom & Wet Area Waterproofing',
     description: 'Moisture in bathrooms can silently damage structural slabs, walls, and flooring over time. Our wet area waterproofing ensures every vulnerable surface is sealed before tiling.',
     steps: [
@@ -31,10 +38,17 @@ const services = [
       'Flood test to verify integrity before tile work begins',
     ],
     materials: 'Flexible cementitious waterproofing compounds, acrylic-based membranes, polyurethane sealants',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M12 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v6H12V8Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="8" y="14" width="32" height="22" rx="3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 36v6M32 36v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 22c0 2.2 1.8 4 4 4s4-1.8 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="20" r="2" fill="currentColor"/>
+    </svg>`,
   },
   {
     id: 'wall',
-    icon: '🧱',
+    short: 'Wall & Facade',
     title: 'Wall & Facade Waterproofing',
     description: 'Exterior walls face constant exposure to rain, wind, and humidity. Damp walls lead to efflorescence, mold, and paint peeling. Our facade treatments stop water at the surface.',
     steps: [
@@ -45,10 +59,17 @@ const services = [
       'Weather-resistant top coat for long-term protection',
     ],
     materials: 'Silicone-based water repellents, acrylic elastomeric coatings, crystalline waterproofing agents',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <rect x="4" y="8" width="40" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="4" y="20" width="40" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="4" y="32" width="40" height="8" rx="2" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M18 8v10M30 20v10M14 32v8M34 32v8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M40 14l4 3M40 25l4 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    </svg>`,
   },
   {
     id: 'tank',
-    icon: '💧',
+    short: 'Water Tank & Sump',
     title: 'Water Tank & Sump Waterproofing',
     description: 'Leaking water tanks waste thousands of litres and damage surrounding structures. We use non-toxic, potable-water-safe systems for overhead tanks, underground sumps, and cisterns.',
     steps: [
@@ -59,10 +80,17 @@ const services = [
       'Final inspection and handover',
     ],
     materials: 'Potable water-safe crystalline coatings — Dr. Fixit Dampguard, Fosroc Brushbond',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <rect x="8" y="10" width="32" height="30" rx="4" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M8 22h32" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
+      <path d="M24 10V6M18 6h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M17 30c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M20 40v-2M28 40v-2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
   },
   {
     id: 'basement',
-    icon: '🏗️',
+    short: 'Basement',
     title: 'Basement Waterproofing',
     description: 'Basements face constant hydrostatic pressure from groundwater. Our negative-side and positive-side waterproofing systems keep basements permanently dry in all conditions.',
     steps: [
@@ -73,10 +101,18 @@ const services = [
       'Final inspection with moisture meter readings',
     ],
     materials: 'CICO crystalline compounds, Fosroc Nitoseal, Sika injection resins',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M4 20h40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="12" y="20" width="24" height="22" rx="2" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M20 20V10a4 4 0 0 1 8 0v10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M12 28h24" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M6 26l-3 4M42 26l3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M19 34h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
   },
   {
     id: 'balcony',
-    icon: '🪟',
+    short: 'Balcony & Podium',
     title: 'Balcony & Podium Waterproofing',
     description: 'Balconies are exposed to direct rain and thermal movement, making them prone to cracking and seepage. Our flexible membrane systems accommodate movement without cracking.',
     steps: [
@@ -84,58 +120,81 @@ const services = [
       'Primer application',
       'Flexible polyurethane or acrylic membrane application',
       'Protection screed over membrane',
-      'Final check and tiling can proceed after curing',
+      'Final check — tiling can proceed after curing',
     ],
     materials: 'Flexible polyurethane membranes, Sika MultiSeal, Dr. Fixit Flexicoat',
+    svg: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10">
+      <path d="M4 36h40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M4 36v-6h40v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 30V14M24 30V14M36 30V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M12 14h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M8 20h4M8 24h4M8 28h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+    </svg>`,
   },
 ];
 ---
 
-<BaseLayout title="Services" description="Mythri Waterproofing services in Hyderabad — terrace, bathroom, wall, water tank, basement, and balcony waterproofing.">
+<BaseLayout
+  title="Services — Mythri Waterproofing"
+  description="Comprehensive waterproofing services in Hyderabad — terrace, bathroom, wall, water tank, basement, and balcony waterproofing by Mythri."
+>
 
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary to-primary-light text-white py-20 px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Our Services</h1>
-    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-6">Comprehensive waterproofing for every part of your building.</p>
-    <div class="flex flex-wrap gap-3 justify-center">
-      {services.map(({ id, icon, title }) => (
-        <a href={`#${id}`} class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full transition-colors border border-white/20">
-          {icon} {title.split(' ')[0]}
+  <section class="bg-brand text-white py-20 px-4 text-center">
+    <p class="text-accent text-xs font-bold uppercase tracking-[2px] mb-3">What We Do</p>
+    <h1 class="font-display text-4xl md:text-5xl font-extrabold mb-4">Our Services</h1>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto mb-8">
+      Comprehensive waterproofing for every part of your building — backed by 20+ years of experience.
+    </p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      {services.map(({ id, short }) => (
+        <a href={`#${id}`}
+          class="bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs font-semibold px-4 py-2 rounded-full transition-all border border-white/15">
+          {short}
         </a>
       ))}
     </div>
   </section>
 
   <!-- Services detail -->
-  <section class="py-16 px-4">
-    <div class="max-w-5xl mx-auto space-y-16">
-      {services.map(({ id, icon, title, description, steps, materials }) => (
-        <div id={id} class="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden scroll-mt-24">
-          <div class="bg-gray-50 border-b border-gray-200 px-8 py-5 flex items-center gap-3">
-            <span class="text-4xl">{icon}</span>
-            <h2 class="text-2xl font-extrabold text-primary">{title}</h2>
+  <section class="py-16 px-4 bg-bg-light">
+    <div class="max-w-5xl mx-auto space-y-10">
+      {services.map(({ id, svg, title, description, steps, materials }) => (
+        <div id={id} class="bg-white rounded-2xl border border-line shadow-sm overflow-hidden scroll-mt-24">
+
+          <!-- Card header -->
+          <div class="bg-brand px-8 py-5 flex items-center gap-4">
+            <div class="text-accent" set:html={svg} />
+            <h2 class="font-display text-xl font-extrabold text-white">{title}</h2>
           </div>
 
           <div class="p-8 grid md:grid-cols-2 gap-8">
+            <!-- Left: description + materials -->
             <div>
-              <p class="text-gray-600 leading-relaxed mb-6">{description}</p>
-              <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
-                <div class="text-xs font-bold text-gray-400 uppercase mb-2">Materials Used</div>
-                <div class="text-gray-600 text-sm">{materials}</div>
+              <p class="text-ink-muted leading-relaxed mb-6">{description}</p>
+              <div class="bg-bg-soft rounded-xl p-4 border border-line">
+                <div class="text-xs font-bold text-ink-subtle uppercase tracking-[1.2px] mb-2">Materials Used</div>
+                <div class="text-ink-muted text-sm leading-relaxed">{materials}</div>
               </div>
             </div>
+
+            <!-- Right: process steps + CTA -->
             <div>
-              <div class="font-bold text-primary mb-3">Our Process</div>
-              <ol class="space-y-3">
+              <div class="font-bold text-ink text-sm uppercase tracking-[1px] mb-4">Our Process</div>
+              <ol class="space-y-3 mb-6">
                 {steps.map((step, idx) => (
                   <li class="flex items-start gap-3">
-                    <span class="w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">{idx + 1}</span>
-                    <span class="text-gray-600 text-sm leading-relaxed">{step}</span>
+                    <span class="w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                      {idx + 1}
+                    </span>
+                    <span class="text-ink-muted text-sm leading-relaxed">{step}</span>
                   </li>
                 ))}
               </ol>
-              <a href={`${base}contact`} class="mt-6 inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-xl transition-colors text-sm">
-                Get a Quote for This Service →
+              <a href={`${base}contact`}
+                class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-[10px] transition-colors text-sm shadow-[0_4px_14px_rgba(204,31,31,.25)]">
+                Get a Quote for This Service
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
@@ -145,15 +204,20 @@ const services = [
   </section>
 
   <!-- CTA -->
-  <section class="bg-primary py-16 px-4 text-white text-center">
-    <h2 class="text-3xl font-extrabold mb-3">Not Sure Which Service You Need?</h2>
-    <p class="text-blue-100 text-lg mb-8">Call us — our experts will inspect your property for free and recommend the right solution.</p>
+  <section class="py-16 px-4 text-center" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D0A0A 100%)">
+    <h2 class="font-display text-3xl font-extrabold text-white mb-3">Not Sure Which Service You Need?</h2>
+    <p class="text-white/60 text-lg mb-8">Call us — our experts will inspect your property for free and recommend the right solution.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="tel:+919550667148" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
-        📞 Call Now — Free Inspection
+      <a href="tel:+919550667148"
+        class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors shadow-[0_8px_24px_rgba(204,31,31,.35)]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now — Free Inspection
       </a>
-      <a href="https://wa.me/919550667148?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
-        💬 WhatsApp Us
+      <a href="https://wa.me/919550667148?text=Hi%2C%20I%20need%20waterproofing%20services" target="_blank" rel="noopener"
+        class="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-[13px] text-base transition-colors"
+        style="background:#25D366">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp Us
       </a>
     </div>
   </section>
