@@ -36,7 +36,7 @@ const services = [
   {
     title: 'Water Tanks & Sumps',
     href: `${base}services#tank`,
-    img: `${base}images/others/water-tank.jpg`,
+    img: `${base}images/water-tank/tank-1.jpg`,
   },
   {
     title: 'Expansion Joints & Slabs',
@@ -179,7 +179,29 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- ⑤ Testimonials -->
+  <!-- ⑤ Trusted By -->
+  <section class="py-16 px-4 bg-bg-warm border-y border-line">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 mb-8">
+        <span class="w-5 h-0.5 bg-accent"></span>
+        <span class="text-accent font-bold text-xs uppercase tracking-[1.6px]">Trusted By</span>
+        <span class="w-5 h-0.5 bg-accent"></span>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-8">
+        {[
+          { name: 'Apollo Hospitals', img: `${base}images/clients/apollo.png` },
+          { name: 'NSL Infratech', img: `${base}images/clients/nsl.png` },
+          { name: 'Inspire Arena', img: `${base}images/clients/arena.png` },
+          { name: 'Hari Hara Constructions', img: `${base}images/clients/hari-hara.png` },
+          { name: 'Nawabs', img: `${base}images/clients/nawabs.png` },
+        ].map(({ name, img }) => (
+          <img src={img} alt={name} loading="lazy" class="h-10 sm:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-all" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ Testimonials -->
   <section class="py-20 px-4 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="mb-12 text-center">
@@ -215,7 +237,7 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- ⑥ Final CTA -->
+  <!-- ⑦ Final CTA -->
   <section class="py-20 px-4 text-white text-center" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D0A0A 100%)">
     <h2 class="font-display font-extrabold mb-3" style="font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px">
       Ready to Fix Your Leakage?
